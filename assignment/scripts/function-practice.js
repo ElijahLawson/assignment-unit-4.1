@@ -27,11 +27,11 @@ function addNumbers( firstNumber, secondNumber ) {
 
 console.log(addNumbers(5, 27));
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree(num1, num2, num3 ){
+  return num1 * num2 * num3;
 }
 
-
+console.log('Testing multiply Three -> 100', mutliplyThree(2,5,10));
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
@@ -65,6 +65,7 @@ function find( value, array ){
     }
 
   }
+  return false;
 }
 
 console.log(find('deer', ['bird', 'dog', 'deer', 'cow']));
@@ -95,13 +96,14 @@ console.log(sumAll([4, 5, 6]));
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 function positivePicker( array ) {
-  positiveArray = [];
-  for (num of array) {
+  let positiveArray = [];
+  for (let num of array) {
     if (num > 0) {
       positiveArray.push(num)
     }
   }
   return (positiveArray.length > 0) ? positiveArray : [];
+
 }
 
 console.log(positivePicker([-1,2,3,-4,5]));
@@ -123,8 +125,9 @@ function swap (inputString) {
   
   let vowelArray = 'aeiou'.split('');
   let inputArray = inputString.split('');
-  
-  for (letter in inputArray) {
+  console.log(inputArray);
+
+  for (let letter in inputArray) {
     if (vowelArray.includes(inputArray[letter]) == true) {
       inputArray[letter] = inputArray[letter].toUpperCase();
     }
@@ -134,3 +137,11 @@ function swap (inputString) {
 
   return (outputArray == " ") ? undefined : outputArray;
 }
+
+// console.log(swap('I am going into town'))
+
+// let word = "armadillo";
+// let sentence = "the quick brown fox jumped over the lazy whatever";
+
+// let wordArray = ['s','a','l','m','o','n'];
+// console.log(wordArray.join('!'));
